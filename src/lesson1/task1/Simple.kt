@@ -2,7 +2,8 @@
 
 package lesson1.task1
 
-import kotlin.math.*
+import kotlin.math.PI
+import kotlin.math.sqrt
 
 /**
  * Пример
@@ -49,8 +50,11 @@ fun quadraticRootProduct(a: Double, b: Double, c: Double): Double {
  * Пример главной функции
  */
 fun main() {
-    val x1x2 = quadraticRootProduct(1.0, 13.0, 42.0)
-    println("Root product: $x1x2")
+//    val x1x2 = quadraticRootProduct(1.0, 13.0, 42.0)
+//    println("Root product: $x1x2")
+    val result = sqr(10)
+    println("Result = $result")
+
 }
 
 /**
@@ -76,7 +80,16 @@ fun lengthInMeters(sagenes: Int, arshins: Int, vershoks: Int): Double = TODO()
  * Пользователь задает угол в градусах, минутах и секундах (например, 36 градусов 14 минут 35 секунд).
  * Вывести значение того же угла в радианах (например, 0.63256).
  */
-fun angleInRadian(deg: Int, min: Int, sec: Int): Double = TODO()
+fun angleInRadian(deg: Int, min: Int, sec: Int): Double {
+    if (deg < 0){
+        throw Error("Negative is not allowed")
+    }
+    val rad: Double = deg * PI / 180
+    val radByMin: Double = min * PI / 180 / 60
+    val radBySec: Double = sec * PI / 180 / 60 / 60
+    return rad + radByMin + radBySec
+}
+
 
 /**
  * Тривиальная
